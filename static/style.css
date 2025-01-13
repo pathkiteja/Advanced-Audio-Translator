@@ -1,0 +1,88 @@
+/* Global Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Static Gradient Background */
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+
+/* Clean Glassmorphism Panels */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 40px;
+    width: 40%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s;
+}
+
+.glass-panel:hover {
+    transform: scale(1.03);
+}
+
+/* Modern, Non-Glowing Buttons */
+.btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #0066ff;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0044cc;
+    transform: scale(1.05);
+}
+
+/* Input Fields - Dark and Sleek */
+.text-area, .dropdown, .file-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #1e1e1e; /* Darker background */
+    color: #ffffff; /* Bright white text */
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Placeholder Text Brightened */
+.text-area::placeholder {
+    color: #cccccc;
+}
+
+/* Result Display Box */
+.result {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    color: #ffffff;
+    word-wrap: break-word;
+    font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .glass-panel {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}

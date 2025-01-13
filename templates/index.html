@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 Advanced Audio Translator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Animated Gradient Background -->
+    <div class="animated-bg"></div>
+
+    <div class="container">
+        <!-- Left Section: Upload and Translate -->
+        <div class="glass-panel left-section">
+            <h1>🌎 Advanced Audio Translator</h1>
+
+            <form method="POST" action="/upload_audio" enctype="multipart/form-data">
+                <h3>🌐 Select Target Language:</h3>
+                <select name="language" class="dropdown">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="it">Italian</option>
+                </select>
+
+                <h3>📂 Upload Audio File:</h3>
+                <input type="file" name="audio_file" accept="audio/*" required class="file-input">
+                <button type="submit" class="btn neon-btn">Upload & Translate</button>
+            </form>
+
+            {% if transcription %}
+                <h3>📝 Transcription:</h3>
+                <div class="result">{{ transcription }}</div>
+                <a href="/download_transcription">
+                    <button class="btn neon-btn">📥 Download Transcription</button>
+                </a>
+            {% endif %}
+        </div>
+
+        <!-- Right Section: Text-to-Speech -->
+        <div class="glass-panel right-section">
+            <h3>✏️ Enter Text for TTS:</h3>
+            <form method="POST" action="/submit_text">
+                <textarea name="user_text" rows="6" placeholder="Enter text here..." required class="text-area"></textarea><br>
+                <select name="text_language" class="dropdown">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="it">Italian</option>
+                </select>
+                <button type="submit" class="btn neon-btn">🔊 Convert to Speech</button>
+            </form>
+
+            {% if tts_text %}
+                <h3>🎤 Generated Audio:</h3>
+                <div class="result">{{ tts_text }}</div>
+                <a href="/play_text_audio">
+                    <button class="btn neon-btn">▶️ Play Generated Speech</button>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
