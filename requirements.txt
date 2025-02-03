@@ -1,0 +1,4 @@
+Flask
+gtts
+requirements.txt
+gunicorn
