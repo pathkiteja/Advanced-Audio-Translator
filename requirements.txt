@@ -1,5 +1,11 @@
 Flask
 gtts
-torch
+
 
 gunicorn
+Flask
+torch
+torchaudio
+soundfile
+transformers
+gtts
